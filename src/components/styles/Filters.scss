@@ -1,0 +1,51 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.filters {
+  position: relative;
+  margin-top: 40px;
+
+  &--btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 220px;
+    padding: 20px 30px;
+    background: $white;
+    border-radius: 8px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+  }
+
+  &--list {
+    position: absolute;
+    top: 65px;
+    display: flex;
+    flex-direction: column;
+    width: 220px;
+    padding: 15px 0;
+    background: $white;
+    border-radius: 8px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+
+    &--filter {
+      text-align: start;
+      background: transparent;
+      padding: 5px 30px;
+    }
+  }
+
+  @include media-md() {
+    margin-top: 0;
+  }
+}
+
+.dark {
+  .filters {
+    &--btn {
+      background: $dark-blue;
+    }
+    &--list {
+      background: $dark-blue;
+    }
+  }
+}

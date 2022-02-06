@@ -1,24 +1,31 @@
-@use 'variables' as *;
-@use 'mixins' as *;
+@use "variables" as *;
+@use "mixins" as *;
 
-.search-bar{
+.search-bar {
   display: flex;
   align-items: center;
   padding-left: 30px;
   background: $white;
   border-radius: 8px;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
-  
-  input{
+
+  input {
     width: 100%;
     background: transparent;
     padding: 22px 30px 20px 25px;
     outline: none;
 
-    &::placeholder{
+    &::placeholder {
       color: $very-dark-blue;
       opacity: 1;
     }
+  }
+
+  .cancel-btn{
+    background: transparent;
+    padding: 22px 30px 20px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
   }
 
   @include media-md() {
@@ -26,12 +33,12 @@
   }
 }
 
-.dark{
-  .search-bar{
+.dark {
+  .search-bar {
     background: $dark-blue;
 
     input {
-      &::placeholder{
+      &::placeholder {
         color: $white;
       }
     }

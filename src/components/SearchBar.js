@@ -1,19 +1,31 @@
 import React, { useState } from "react";
 import "./styles/SearchBar.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faSearch, faTimes } from "@fortawesome/free-solid-svg-icons";
 
-const SearchBar = ({setUrl}) => {
+const SearchBar = ({ setUrl }) => {
+  const [searching, setSearching] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
 
   const clickHandler = () => {
-    if (searchTerm === '' || searchTerm === ' ') return;
+    if (searchTerm === "" || searchTerm === " ") return;
     setUrl(`https://restcountries.com/v2/name/${searchTerm}`);
+    setSearching(true);
+  };
+
+  const cancelSearch = () => {
+    setSearchTerm("");
+    setUrl('https://restcountries.com/v2/all');
+    setSearching(false);
   }
 
   return (
     <div className="search-bar">
-      <FontAwesomeIcon icon={faSearch} onClick={clickHandler} style={{cursor: 'pointer'}} />
+      <FontAwesomeIcon
+        icon={faSearch}
+        onClick={clickHandler}
+        style={{ cursor: "pointer" }}
+      />
       <input
         type="text"
         placeholder="Search for a country..."
@@ -21,8 +33,17 @@ const SearchBar = ({setUrl}) => {
         onChange={(e) => {
           setSearchTerm(e.target.value);
         }}
-        onKeyDown={(e) => {if (e.keyCode === 13) clickHandler() }}
+        onKeyDown={(e) => {
+          if (e.keyCode === 13) clickHandler();
+        }}
       />
+      {searching ? (
+        <button className="cancel-btn" onClick={cancelSearch}>
+          <FontAwesomeIcon icon={faTimes} />
+        </button>
+      ) : (
+        ""
+      )}
     </div>
   );
 };

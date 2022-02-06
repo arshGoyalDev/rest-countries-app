@@ -1,5 +1,5 @@
 @use "variables" as *;
-@use 'mixins' as *;
+@use "mixins" as *;
 
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800&display=swap");
 
@@ -30,6 +30,13 @@ button {
 // body
 // ---------------- //
 
+html {
+  @supports (scrollbar-width: thin) {
+    scrollbar-width: thin;
+    scrollbar-color: #575c70 transparent;
+  }
+}
+
 body {
   font-weight: $fw-regular;
   font-family: "Nunito Sans", sans-serif;
@@ -38,7 +45,20 @@ body {
 
   &.dark {
     color: $white;
-    background: $very-dark-blue;
+    background: $very-dark-blue-background;
+
+    &::-webkit-scrollbar-thumb {
+      background: hsl(209, 24%, 87%);
+    }
+  }
+
+  &::-webkit-scrollbar {
+    width: 5px;
+
+    &-thumb {
+      border-radius: 40px;
+      background: hsl(0, 0%, 0%);
+    }
   }
 }
 
@@ -66,12 +86,38 @@ body {
   }
 
   @include media-md() {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-top: 50px;
     padding: 0 35px;
   }
 
   @include media-lg() {
     margin-top: 60px;
-    padding: 0 105px;
+    padding: 0 140px;
+  }
+}
+
+.countries-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 0 15px;
+  margin-block: 60px;
+
+  @include media-sm() {
+    justify-content: space-between;
+    padding: 0 25px;
+  }
+
+  @include media-md() {
+    gap: 60px;
+    padding: 0 35px;
+  }
+
+  @include media-lg() {
+    padding: 0 140px;
   }
 }
