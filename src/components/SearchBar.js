@@ -3,7 +3,7 @@ import "./styles/SearchBar.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faTimes } from "@fortawesome/free-solid-svg-icons";
 
-const SearchBar = ({ setUrl }) => {
+const SearchBar = ({ setUrl, setLoading }) => {
   const [searching, setSearching] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -11,13 +11,15 @@ const SearchBar = ({ setUrl }) => {
     if (searchTerm === "" || searchTerm === " ") return;
     setUrl(`https://restcountries.com/v2/name/${searchTerm}`);
     setSearching(true);
+    setLoading(true);
   };
 
   const cancelSearch = () => {
     setSearchTerm("");
-    setUrl('https://restcountries.com/v2/all');
+    setUrl("https://restcountries.com/v2/all");
     setSearching(false);
-  }
+    setLoading(true);
+  };
 
   return (
     <div className="search-bar">

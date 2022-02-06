@@ -1,25 +1,25 @@
-@use 'variables' as *;
-@use 'mixins' as *;
+@use "variables" as *;
+@use "mixins" as *;
 
-nav{
+nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 35px 5px 35px 15px;
   background: $white;
-  box-shadow: 0 0 60px rgba(0,0,0,0.2);  
-  
-  h1{
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.2);
+
+  h1 {
     font-size: 1.1rem;
   }
-  
-  .theme-toggle-btn{
+
+  .theme-toggle-btn {
     display: flex;
     align-items: center;
     background: transparent;
     padding: 5px 10px;
-  
-    span{
+
+    span {
       font-weight: $fw-medium;
       margin-left: 8px;
     }
@@ -32,7 +32,7 @@ nav{
   @include media-md() {
     padding: 35px 25px 35px 35px;
 
-    h1{
+    h1 {
       font-size: 1.3rem;
     }
   }
@@ -41,7 +41,6 @@ nav{
     padding: 25px 130px 25px 140px;
   }
 }
-
 
 .dark nav {
   background: $dark-blue;

@@ -39,7 +39,7 @@
   }
 }
 
-.active-filter-container{
+.active-filter-container {
   display: flex;
   margin-top: 30px;
   padding: 0 15px;
@@ -54,7 +54,7 @@
     border-radius: 8px;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
 
-    .span{
+    .span {
       font-size: 1.2rem;
       margin-top: 2px;
       background: transparent;
@@ -85,7 +85,7 @@
     }
   }
 
-  .active-filter{
+  .active-filter {
     background: $dark-blue;
   }
 }
