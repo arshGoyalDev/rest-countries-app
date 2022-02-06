@@ -3,11 +3,11 @@ import "./styles/Filters.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
-const Filters = ({ setUrl }) => {
-  const [regions, setRegions] = useState(null);
+const Filters = ({ setUrl, setActiveFilter }) => {
+  const [regions, setRegions] = useState("");
 
   const showFilters = () => {
-    setRegions(["Africa", "Americas", "Asia", "Europe", "Oceania"]);
+    regions === "" ? setRegions(["Africa", "Americas", "Asia", "Europe", "Oceania"]) : setRegions("");
   };
 
   const selectFilter = (e) => {
@@ -16,6 +16,7 @@ const Filters = ({ setUrl }) => {
       "data-value"
     ).toLowerCase()}`);
     setRegions(null);
+    setActiveFilter(e.target.getAttribute("data-value"));
   };
 
   return (

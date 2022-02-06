@@ -4,6 +4,7 @@ import "./components/styles/App.scss";
 import NavBar from "./components/NavBar";
 import SearchBar from "./components/SearchBar";
 import Filters from "./components/Filters";
+import ActiveFilter from "./components/ActiveFilter";
 import Country from "./components/Country";
 
 const App = () => {
@@ -12,6 +13,7 @@ const App = () => {
     window.matchMedia("(prefers-color-scheme: dark)").matches ? true : false
   );
   const [countries, setCountries] = useState([]);
+  const [activeFilter, setActiveFilter] = useState(null);
 
   const fetchCountries = async () => {
     const res = await fetch(url);
@@ -32,8 +34,9 @@ const App = () => {
       <NavBar darkMode={darkMode} setDarkMode={setDarkMode} />
       <div className="search-filters-container">
         <SearchBar setUrl={setUrl} />
-        <Filters setUrl={setUrl} />
+        <Filters setUrl={setUrl} setActiveFilter={setActiveFilter} />
       </div>
+      {activeFilter ? <ActiveFilter activeFilter={activeFilter} setActiveFilter={setActiveFilter} setUrl={setUrl} /> : ""}
       <div className="countries-container">
         {
           countries.map((country) => (

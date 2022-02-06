@@ -1,9 +1,6 @@
 import './styles/Country.scss';
 
 const Country = ({data}) => {
-
-  console.log(data);
-  
   return (
     <div className="country-card">
       <div className="country-card--flag">
