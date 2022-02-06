@@ -1,0 +1,48 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 35px 5px 35px 15px;
+  background: $white;
+  box-shadow: 0 0 60px rgba(0,0,0,0.2);  
+  
+  h1{
+    font-size: 1.1rem;
+  }
+  
+  .theme-toggle-btn{
+    display: flex;
+    align-items: center;
+    background: transparent;
+    padding: 5px 10px;
+  
+    span{
+      font-weight: $fw-medium;
+      margin-left: 8px;
+    }
+  }
+
+  @include media-sm() {
+    padding: 35px 15px 35px 25px;
+  }
+
+  @include media-md() {
+    padding: 35px 25px 35px 35px;
+
+    h1{
+      font-size: 1.3rem;
+    }
+  }
+
+  @include media-lg() {
+    padding: 25px 95px 25px 105px;
+  }
+}
+
+
+.dark nav {
+  background: $dark-blue;
+}
