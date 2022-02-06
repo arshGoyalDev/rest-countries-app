@@ -1,26 +1,26 @@
-@use 'variables' as *;
+@use "variables" as *;
+@use 'mixins' as *;
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800&display=swap");
 
 // ---------------- //
 // reset
-// ---------------- // 
+// ---------------- //
 
 *,
 *::before,
-*::after{
+*::after {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-a{
+a {
   text-decoration: none;
 }
 
 input,
-button{
+button {
   color: inherit;
   font-family: inherit;
   border: 0;
@@ -30,13 +30,13 @@ button{
 // body
 // ---------------- //
 
-body{
+body {
   font-weight: $fw-regular;
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   color: $very-dark-blue;
   background: $very-light-gray;
 
-  &.dark{
+  &.dark {
     color: $white;
     background: $very-dark-blue;
   }
@@ -49,8 +49,29 @@ body{
   outline: 2px solid $very-dark-blue;
 }
 
-.dark{
-  *:focus{
+.dark {
+  *:focus {
     outline-color: $white;
+  }
+}
+
+// components
+
+.search-filters-container {
+  margin-top: 30px;
+  padding: 0 15px;
+
+  @include media-sm() {
+    padding: 0 25px;
+  }
+
+  @include media-md() {
+    margin-top: 50px;
+    padding: 0 35px;
+  }
+
+  @include media-lg() {
+    margin-top: 60px;
+    padding: 0 105px;
   }
 }

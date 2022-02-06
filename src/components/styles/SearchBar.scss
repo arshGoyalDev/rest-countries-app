@@ -1,0 +1,39 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.search-bar{
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+  background: $white;
+  border-radius: 8px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+  
+  input{
+    width: 100%;
+    background: transparent;
+    padding: 22px 30px 20px 25px;
+    outline: none;
+
+    &::placeholder{
+      color: $very-dark-blue;
+      opacity: 1;
+    }
+  }
+
+  @include media-md() {
+    width: 460px;
+  }
+}
+
+.dark{
+  .search-bar{
+    background: $dark-blue;
+
+    input {
+      &::placeholder{
+        color: $white;
+      }
+    }
+  }
+}
