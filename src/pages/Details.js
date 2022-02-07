@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 
+import '../components/styles/CountryDetails.scss';
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLongArrowAltLeft } from "@fortawesome/free-solid-svg-icons";
 
@@ -23,10 +25,10 @@ const Details = () => {
   }, []);
 
   return (
-    <div>
+    <div className="details">
       {countryDetails[0] !== undefined ? (
         <>
-          <Link to="/"><button><FontAwesomeIcon icon={faLongArrowAltLeft} />Back</button></Link>
+          <Link to="/"><button className="back-btn"><FontAwesomeIcon icon={faLongArrowAltLeft} /><span>Back</span></button></Link>
           <CountryDetails data={countryDetails[0]} />
         </>
       ) : (

@@ -8,7 +8,7 @@ const Country = ({ data }) => {
         <img src={data.flags.png} alt={data.name} />
       </div>
       <div className="country-card--details">
-        <Link to={`/${data.name}`}>
+        <Link to={`/${data.name.toLowerCase()}`}>
           <h3>{data.name}</h3>
         </Link>
         <div className="country-card--details--other">

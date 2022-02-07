@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 
+import NavBar from "./components/NavBar"
 import "./components/styles/App.scss";
 import Details from "./pages/Details";
 
@@ -19,14 +20,13 @@ const App = () => {
 
   return (
     <div className="App">
+      <NavBar darkMode={darkMode} setDarkMode={setDarkMode} />
       <Routes>
         <Route
           path="/"
-          element={<Home darkMode={darkMode} setDarkMode={setDarkMode} />}
+          element={<Home />}
         />
         <Route path=":countryName" element={<Details />} />
-          {/* <Route path=":countryName" element={<Details />} /> */}
-        {/* </Route> */}
       </Routes>
     </div>
   );

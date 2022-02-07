@@ -1,0 +1,170 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.details{
+  padding: 0 20px;
+  margin-top: 40px;
+
+  .back-btn{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 30px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  }
+
+  .country-details{
+    margin-block: 60px;
+
+    &--flag{
+      margin-bottom: 30px;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+  
+      img{
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+      }
+    }
+
+    &--details{
+      h1{
+        font-weight: $fw-bold;
+      }
+
+      &--columns{
+        margin-block: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+
+        &--column{
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .row{
+          display: flex;
+          gap: 5px;
+
+          span:first-child{ 
+            font-weight: $fw-medium;
+          }
+
+          span:last-child{
+            font-weight: $fw-regular;
+          }
+        }
+      }
+
+      &--borders{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+  
+        h3{
+          font-weight: $fw-medium;
+        }
+  
+        div{
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+          
+          button{          
+            padding: 8px 30px;
+            background: $white;
+            border-radius: 4px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+
+    @include media-sm() {
+      &--flag{
+        width: 50%;
+
+        img{
+          height: auto;
+        }
+      }
+    }
+
+    @include media-md() {
+      &--details{
+        &--columns{
+          margin-block: 30px;
+          gap: 80px;
+          flex-direction: row;
+        }
+  
+        &--borders{
+          align-items: center;
+          flex-direction: row;
+          gap: 20px;
+        }        
+      }
+    }
+
+    @include media-lg{
+      display: flex;
+      align-items: center;
+      gap: 100px;
+
+      &--flag{
+        margin-bottom: 0;
+
+        img{
+          max-height: 500px;
+        }
+      }
+
+      &--details{
+        width: 50%;
+
+        &--columns{
+          margin-block: 50px;
+        }
+      }
+    }
+
+    @include media-xl() {
+      gap: 150px;
+    }
+  }
+
+  @include media-sm() {
+    padding: 0 25px;
+  }
+
+  @include media-md() {
+    margin-top: 50px;
+    padding: 0 35px;
+
+    .back-btn{
+      padding: 15px 40px;
+    }
+  }
+
+  @include media-lg() {
+    padding: 0 100px;
+  }
+}
+
+
+.dark{
+  .back-btn{
+    background: $dark-blue;
+  }
+
+  .country-details--details--borders div button{
+    background: $dark-blue;
+  }
+}
