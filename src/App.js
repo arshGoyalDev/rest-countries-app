@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { Route, Routes } from "react-router-dom";
+
 import "./components/styles/App.scss";
+
 import Home from "./pages/Home";
 
 const App = () => {
@@ -15,7 +18,12 @@ const App = () => {
 
   return (
     <div className="App">
-      <Home darkMode={darkMode} setDarkMode={setDarkMode} />
+      <Routes>
+        <Route
+          path="/"
+          element={<Home darkMode={darkMode} setDarkMode={setDarkMode} />}
+        />
+      </Routes>
     </div>
   );
 };

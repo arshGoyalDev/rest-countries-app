@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+
 import "./styles/Filters.scss";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 

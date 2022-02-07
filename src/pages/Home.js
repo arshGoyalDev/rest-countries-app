@@ -1,4 +1,4 @@
-import React,{ useState, useEffect} from 'react';
+import React, { useState, useEffect } from "react";
 
 import NavBar from "../components/NavBar";
 import SearchBar from "../components/SearchBar";
@@ -11,7 +11,7 @@ const loadingData = [
   1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
 ];
 
-const Home = ({darkMode, setDarkMode}) => {
+const Home = ({ darkMode, setDarkMode }) => {
   const [url, setUrl] = useState("https://restcountries.com/v2/all");
   const [countries, setCountries] = useState([]);
   const [activeFilter, setActiveFilter] = useState(null);

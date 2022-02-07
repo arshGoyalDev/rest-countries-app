@@ -109,7 +109,7 @@ body {
 
   @include media-lg() {
     margin-top: 60px;
-    padding: 0 140px;
+    padding: 0 100px;
   }
 }
 
@@ -132,6 +132,6 @@ body {
   }
 
   @include media-lg() {
-    padding: 0 140px;
+    padding: 0 100px;
   }
 }
