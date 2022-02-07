@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 
 import "./components/styles/App.scss";
+import Details from "./pages/Details";
 
 import Home from "./pages/Home";
 
@@ -23,6 +24,9 @@ const App = () => {
           path="/"
           element={<Home darkMode={darkMode} setDarkMode={setDarkMode} />}
         />
+        <Route path=":countryName" element={<Details />} />
+          {/* <Route path=":countryName" element={<Details />} /> */}
+        {/* </Route> */}
       </Routes>
     </div>
   );

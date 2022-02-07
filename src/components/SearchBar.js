@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import "./styles/SearchBar.scss";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 const SearchBar = ({ setUrl, setLoading }) => {
   const [searching, setSearching] = useState(false);

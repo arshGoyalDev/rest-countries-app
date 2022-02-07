@@ -4,7 +4,7 @@ import NavBar from "../components/NavBar";
 import SearchBar from "../components/SearchBar";
 import Filters from "../components/Filters";
 import ActiveFilter from "../components/ActiveFilter";
-import Country from "../components/Country";
+import Country from "../components/CountryCard";
 import LoadingCard from "../components/LoadingCard";
 
 const loadingData = [

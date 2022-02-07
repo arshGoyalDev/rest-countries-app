@@ -1,4 +1,5 @@
-import "./styles/Country.scss";
+import "./styles/CountryCard.scss";
+import { Link } from "react-router-dom";
 
 const Country = ({ data }) => {
   return (
@@ -7,7 +8,9 @@ const Country = ({ data }) => {
         <img src={data.flags.png} alt={data.name} />
       </div>
       <div className="country-card--details">
-        <h3>{data.name}</h3>
+        <Link to={`/${data.name}`}>
+          <h3>{data.name}</h3>
+        </Link>
         <div className="country-card--details--other">
           <p>
             Population :{" "}
