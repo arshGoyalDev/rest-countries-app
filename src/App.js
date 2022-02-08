@@ -19,13 +19,13 @@ const App = () => {
   }, [darkMode]);
 
   return (
-    <div className="App">
+    <main className="App">
       <NavBar darkMode={darkMode} setDarkMode={setDarkMode} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path=":countryCode" element={<Details />} />
       </Routes>
-    </div>
+    </main>
   );
 };
 
