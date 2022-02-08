@@ -76,9 +76,8 @@ const CountryDetails = ({ data }) => {
           </div>
         </div>
         <div className="country-details--details--borders">
+              <h3>Border Countries : {data.borders === undefined && (<span>No Countries</span>)}</h3>
           {data.borders !== undefined && (
-            <>
-              <h3>Border Countries : </h3>
               <div>
                 {data.borders?.map((country) => (
                   <Link to={`/${country}`} key={country}>
@@ -86,7 +85,6 @@ const CountryDetails = ({ data }) => {
                   </Link>
                 ))}
               </div>
-            </>
           )}
         </div>
       </div>
