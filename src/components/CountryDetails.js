@@ -1,6 +1,6 @@
 import "./styles/CountryDetails.scss";
 
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 const CountryDetails = ({ data }) => {
   const details = [

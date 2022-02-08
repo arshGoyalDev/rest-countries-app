@@ -13,15 +13,16 @@ const Details = () => {
   const [countryDetails, setCountryDetails] = useState({});
   let { countryCode } = useParams();
 
-  const fetchDetails = async () => {
-    const res = await fetch(
-      `https://restcountries.com/v2/alpha/${countryCode}`
-    );
-    const data = await res.json();
-    setCountryDetails(data);
-  };
-
+  
   useEffect(() => {
+    const fetchDetails = async () => {
+      const res = await fetch(
+        `https://restcountries.com/v2/alpha/${countryCode}`
+      );
+      const data = await res.json();
+      setCountryDetails(data);
+    };
+
     fetchDetails();
   }, []);
 

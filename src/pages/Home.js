@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-import NavBar from "../components/NavBar";
 import SearchBar from "../components/SearchBar";
 import Filters from "../components/Filters";
 import ActiveFilter from "../components/ActiveFilter";
@@ -17,14 +16,15 @@ const Home = () => {
   const [activeFilter, setActiveFilter] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const fetchCountries = async () => {
-    const res = await fetch(url);
-    const data = await res.json();
-    setCountries(data);
-    setLoading(false);
-  };
-
+  
   useEffect(() => {
+    const fetchCountries = async () => {
+      const res = await fetch(url);
+      const data = await res.json();
+      setCountries(data);
+      setLoading(false);
+    };
+
     fetchCountries();
   }, [url]);
 
