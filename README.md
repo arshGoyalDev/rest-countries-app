@@ -24,7 +24,7 @@ Users should be able to:
 
 - [React](https://reactjs.org/) - JS library
 - [Scss](https://www.sass-lang.com) - CSS Preprocessor
-- [React Router][https://reactrouter.com/] - Router for React.js
+- [React Router](https://reactrouter.com/) - Router for React.js
 ## Author
 
 - Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/arshWebDev)
