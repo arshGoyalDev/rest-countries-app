@@ -1,6 +1,6 @@
 import "./styles/CountryDetails.scss";
 
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const CountryDetails = ({ data }) => {
   const details = [
@@ -81,9 +81,9 @@ const CountryDetails = ({ data }) => {
               <h3>Border Countries : </h3>
               <div>
                 {data.borders?.map((country) => (
-                  // <Link to={`/${country}`} key={country}>
+                  <Link to={`/${country}`} key={country}>
                     <button key={country}>{country}</button>
-                  // </Link>
+                  </Link>
                 ))}
               </div>
             </>

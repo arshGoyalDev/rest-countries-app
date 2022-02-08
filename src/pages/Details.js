@@ -24,7 +24,7 @@ const Details = () => {
     };
 
     fetchDetails();
-  }, []);
+  }, [countryCode]);
 
   return (
     <div className="details">
