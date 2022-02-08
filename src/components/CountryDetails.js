@@ -1,8 +1,8 @@
 import "./styles/CountryDetails.scss";
 
-const CountryDetails = ({ data }) => {
-  console.log(data);
+import { Link } from "react-router-dom";
 
+const CountryDetails = ({ data }) => {
   const details = [
     {
       type: "Native Name",
@@ -41,8 +41,6 @@ const CountryDetails = ({ data }) => {
       }),
     },
   ];
-
-  console.log(details[6].value);
 
   return (
     <div className="country-details">
@@ -83,7 +81,9 @@ const CountryDetails = ({ data }) => {
               <h3>Border Countries : </h3>
               <div>
                 {data.borders?.map((country) => (
-                  <button key={country}>{country}</button>
+                  // <Link to={`/${country}`} key={country}>
+                    <button key={country}>{country}</button>
+                  // </Link>
                 ))}
               </div>
             </>

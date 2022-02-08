@@ -1,11 +1,11 @@
-@use 'variables' as *;
-@use 'mixins' as *;
+@use "variables" as *;
+@use "mixins" as *;
 
-.details{
+.details {
   padding: 0 20px;
   margin-top: 40px;
 
-  .back-btn{
+  .back-btn {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -16,66 +16,66 @@
     cursor: pointer;
   }
 
-  .country-details{
+  .country-details {
     margin-block: 60px;
 
-    &--flag{
+    &--flag {
       margin-bottom: 30px;
       box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
-  
-      img{
+
+      img {
         width: 100%;
         height: 180px;
         object-fit: cover;
       }
     }
 
-    &--details{
-      h1{
+    &--details {
+      h1 {
         font-weight: $fw-bold;
       }
 
-      &--columns{
+      &--columns {
         margin-block: 20px;
         display: flex;
         flex-direction: column;
         gap: 35px;
 
-        &--column{
+        &--column {
           display: flex;
           flex-direction: column;
           gap: 10px;
         }
 
-        .row{
+        .row {
           display: flex;
           gap: 5px;
 
-          span:first-child{ 
+          span:first-child {
             font-weight: $fw-medium;
           }
 
-          span:last-child{
+          span:last-child {
             font-weight: $fw-regular;
           }
         }
       }
 
-      &--borders{
+      &--borders {
         display: flex;
         flex-direction: column;
         gap: 10px;
-  
-        h3{
+
+        h3 {
           font-weight: $fw-medium;
         }
-  
-        div{
+
+        div {
           display: flex;
           flex-wrap: wrap;
           gap: 10px;
-          
-          button{          
+
+          button {
             padding: 8px 30px;
             background: $white;
             border-radius: 4px;
@@ -86,50 +86,49 @@
       }
     }
 
-
     @include media-sm() {
-      &--flag{
+      &--flag {
         width: 50%;
 
-        img{
+        img {
           height: auto;
         }
       }
     }
 
     @include media-md() {
-      &--details{
-        &--columns{
+      &--details {
+        &--columns {
           margin-block: 30px;
           gap: 80px;
           flex-direction: row;
         }
-  
-        &--borders{
+
+        &--borders {
           align-items: center;
           flex-direction: row;
           gap: 20px;
-        }        
+        }
       }
     }
 
-    @include media-lg{
+    @include media-lg {
       display: flex;
       align-items: center;
       gap: 100px;
 
-      &--flag{
+      &--flag {
         margin-bottom: 0;
 
-        img{
+        img {
           max-height: 500px;
         }
       }
 
-      &--details{
+      &--details {
         width: 50%;
 
-        &--columns{
+        &--columns {
           margin-block: 50px;
         }
       }
@@ -148,7 +147,7 @@
     margin-top: 50px;
     padding: 0 35px;
 
-    .back-btn{
+    .back-btn {
       padding: 15px 40px;
     }
   }
@@ -158,13 +157,12 @@
   }
 }
 
-
-.dark{
-  .back-btn{
+.dark {
+  .back-btn {
     background: $dark-blue;
   }
 
-  .country-details--details--borders div button{
+  .country-details--details--borders div button {
     background: $dark-blue;
   }
 }

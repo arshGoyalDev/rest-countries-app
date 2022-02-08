@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 
-import NavBar from "./components/NavBar"
+import NavBar from "./components/NavBar";
 import "./components/styles/App.scss";
-import Details from "./pages/Details";
 
 import Home from "./pages/Home";
+import Details from "./pages/Details";
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(
@@ -22,11 +22,8 @@ const App = () => {
     <div className="App">
       <NavBar darkMode={darkMode} setDarkMode={setDarkMode} />
       <Routes>
-        <Route
-          path="/"
-          element={<Home />}
-        />
-        <Route path=":countryName" element={<Details />} />
+        <Route path="/" element={<Home />} />
+        <Route path=":countryCode" element={<Details />} />
       </Routes>
     </div>
   );
