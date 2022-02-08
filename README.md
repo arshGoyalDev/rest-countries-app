@@ -27,5 +27,5 @@ Users should be able to:
 - [React Router](https://reactrouter.com/) - Router for React.js
 ## Author
 
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/arshWebDev)
-- Twitter - [@yourusername](https://www.twitter.com/arshWebDev)
+- [Frontend Mentor](https://www.frontendmentor.io/profile/arshWebDev)
+- [Twitter](https://www.twitter.com/arshWebDev)
