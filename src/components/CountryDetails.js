@@ -30,7 +30,7 @@ const CountryDetails = ({ data }) => {
     },
     {
       type: "Currencies",
-      value: data.currencies.map((currency) => {
+      value: data.currencies?.map((currency) => {
         return currency;
       }),
     },
@@ -41,6 +41,8 @@ const CountryDetails = ({ data }) => {
       }),
     },
   ];
+
+  console.log(details[7]);
 
   return (
     <div className="country-details">
@@ -65,9 +67,11 @@ const CountryDetails = ({ data }) => {
             </div>
             <div className="row">
               <span>{details[6].type}</span> <span>:</span>
-              {details[6].value.map((value) => (
-                <span key={value.name}>{value.name}</span>
-              ))}
+              {details[6].value === undefined
+                ? "No Currency"
+                : details[6].value.map((value) => (
+                    <span key={value.name}>{value.name}</span>
+                  ))}
             </div>
             <div className="row">
               <span>{details[7].type}</span> <span>:</span>{" "}
@@ -76,15 +80,18 @@ const CountryDetails = ({ data }) => {
           </div>
         </div>
         <div className="country-details--details--borders">
-              <h3>Border Countries : {data.borders === undefined && (<span>No Countries</span>)}</h3>
+          <h3>
+            Border Countries :{" "}
+            {data.borders === undefined && <span>No Countries</span>}
+          </h3>
           {data.borders !== undefined && (
-              <div>
-                {data.borders?.map((country) => (
-                  <Link to={`/${country}`} key={country}>
-                    <button key={country}>{country}</button>
-                  </Link>
-                ))}
-              </div>
+            <div>
+              {data.borders?.map((country) => (
+                <Link to={`/${country}`} key={country}>
+                  <button key={country}>{country}</button>
+                </Link>
+              ))}
+            </div>
           )}
         </div>
       </div>

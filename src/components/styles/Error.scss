@@ -1,0 +1,68 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.error {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+
+  &--information {
+    h1 {
+      font-size: 3rem;
+      font-weight: $fw-bold;
+
+      span {
+        display: inline-block;
+        transform: rotate(30deg);
+        margin-left: 8px;
+      }
+    }
+
+    p {
+      max-width: 300px;
+      margin: 5px 0 12px 3px;
+    }
+
+    a {
+      display: inline-block;
+      font-weight: $fw-medium;
+      padding: 15px 30px;
+      background: $white;
+      border-radius: 8px;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+    }
+  }
+
+  &--illustration {
+    width: 90%;
+    margin: 0 auto;
+
+    img {
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+
+  @include media-lg() {
+    flex-direction: row;
+
+    &--information {
+      margin-top: 50px;
+      width: 100%;
+    }
+
+    &--illustration {
+      width: 95%;
+    }
+  }
+}
+
+.dark {
+  .error--information {
+    a {
+      background: $dark-blue;
+    }
+  }
+}
