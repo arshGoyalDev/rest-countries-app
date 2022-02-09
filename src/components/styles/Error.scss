@@ -24,7 +24,7 @@
       margin: 5px 0 12px 3px;
     }
 
-    a {
+    button {
       display: inline-block;
       font-weight: $fw-medium;
       padding: 15px 30px;
@@ -61,7 +61,7 @@
 
 .dark {
   .error--information {
-    a {
+    button {
       background: $dark-blue;
     }
   }
