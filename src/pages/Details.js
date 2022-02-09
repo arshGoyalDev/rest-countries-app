@@ -20,7 +20,6 @@ const Details = () => {
       );
       const data = await res.json();
       setCountryDetails(data);
-      console.log(data);
     };
 
     fetchDetails();

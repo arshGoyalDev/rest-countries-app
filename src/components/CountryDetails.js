@@ -42,8 +42,6 @@ const CountryDetails = ({ data }) => {
     },
   ];
 
-  console.log(details[7]);
-
   return (
     <div className="country-details">
       <div className="country-details--flag">
