@@ -8,9 +8,11 @@ import { faLongArrowAltLeft } from "@fortawesome/free-solid-svg-icons";
 
 import CountryDetails from "../components/CountryDetails";
 import LoadingDetails from "../components/LoadingDetails";
+import Error from "../components/Error";
 
 const Details = () => {
   const [countryDetails, setCountryDetails] = useState({});
+  const [loading, setLoading] = useState(true);
   let { countryCode } = useParams();
 
   useEffect(() => {
@@ -20,6 +22,8 @@ const Details = () => {
       );
       const data = await res.json();
       setCountryDetails(data);
+      setLoading(false);
+      console.log(data);
     };
 
     fetchDetails();
@@ -27,7 +31,9 @@ const Details = () => {
 
   return (
     <div className="details">
-      {countryDetails.name !== undefined ? (
+      {loading ? (
+        <LoadingDetails />
+      ) : countryDetails.name !== undefined ? (
         <>
           <Link to="/">
             <button className="back-btn">
@@ -37,9 +43,7 @@ const Details = () => {
           </Link>
           <CountryDetails data={countryDetails} />
         </>
-      ) : (
-        <LoadingDetails />
-      )}
+      ) : (<Error link={true} />)}
     </div>
   );
 };

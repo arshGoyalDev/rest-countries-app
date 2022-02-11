@@ -52,7 +52,7 @@ const Home = () => {
         {loading ? (
           loadingData.map((data) => <LoadingCard key={data} />)
         ) : countries.message !== undefined ? (
-          <Error />
+          <Error link={false} />
         ) : (
           countries.map((country) => (
             <Country data={country} key={country.name} />
