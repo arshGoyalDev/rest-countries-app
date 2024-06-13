@@ -123,15 +123,15 @@ body {
   margin-block: 60px;
 
   @include media-sm() {
-    justify-content: space-between;
     padding: 0 25px;
   }
-
+  
   @include media-md() {
+    justify-content: space-between;
     gap: 70px;
-    padding: 0 35px;
+    padding: 0 80px;
   }
-
+  
   @include media-lg() {
     padding: 0 100px;
   }
