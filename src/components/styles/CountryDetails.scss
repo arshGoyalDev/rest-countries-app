@@ -12,7 +12,7 @@
     padding: 10px 30px;
     background: white;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     cursor: pointer;
   }
 
@@ -21,7 +21,7 @@
 
     &--flag {
       margin-bottom: 30px;
-      box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 
       img {
         width: 100%;
@@ -79,7 +79,7 @@
             padding: 8px 30px;
             background: $white;
             border-radius: 4px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             cursor: pointer;
           }
         }
