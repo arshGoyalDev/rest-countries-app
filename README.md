@@ -19,11 +19,6 @@ Users should be able to:
 - Click through to the border countries on the detail page
 - Toggle the color scheme between light and dark mode _(optional)_
 
-### Links
-
-- [Solution URL](https://www.frontendmentor.io/solutions/rest-countries-app-F3tGGmSil)
-- [Live Site URL](https://rest-countries-app-one.vercel.app)
-
 ## Built with
 
 - [React](https://reactjs.org/) - JS library
